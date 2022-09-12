@@ -10,10 +10,10 @@ it('Should summarize all number values in an array', () => {
   
     // Assert
     const expectedResult = numbers.reduce(
-      (prevValue, curValue) => prevValue - curValue,
+      (prevValue, curValue) => prevValue + curValue,
       0
     );
-    expect(result).toBe(expectedResult + 1);
+    expect(result).toBe(expectedResult);
   });
   
   it('Should yield a correct sum if an array of numeric string values is provided', () => {
