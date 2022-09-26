@@ -17,6 +17,7 @@ export class shoppingPage {
     url: string = 'https://www.saucedemo.com/inventory.html'
     bikeLight: By = By.id('item_0_title_link')
     backpack: By = By.id('item_4_title_link')
+    bpAddToCart: By = By.id('add-to-cart-sauce-labs-backpack')
     fleece: By = By.id('item_5_title_link')
     shoppingCart: By = By.id('shopping_cart_container')
     constructor(driver: WebDriver, url: string) {
@@ -45,6 +46,10 @@ export class shoppingPage {
     async getText(elementBy: By) {
         await this.driver.wait(until.elementLocated(elementBy))
         return this.driver.findElement(elementBy).getText()
+    }
+    async addProducts() {
+        await this.driver.wait(until.elementLocated(this.backpack))
+        return driver.findElement(this.bpAddToCart).click()
     }
     async getResults() {
         return this.getText(this.results)

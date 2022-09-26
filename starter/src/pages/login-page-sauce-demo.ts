@@ -48,17 +48,7 @@ export class loginPage {
         await this.driver.wait(until.elementLocated(elementBy))
         return this.driver.findElement(elementBy).getText()
     }
-    async getResults() {
-        return this.getText(this.results)
-    }
+    // async getResults() {
+    //     return this.getText(this.results)
+    // }
 }
-
-driver.findElement(WebDriver.By.id('login-button')).then(function(webElement) {
-    console.log('Element exists');
-}, function(err) {
-    if (err.state && err.state === 'no such element') {
-        console.log('Element not found');
-    } else {
-        WebDriver.Promise.rejected(err);
-    }
-});
